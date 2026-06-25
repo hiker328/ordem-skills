@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Saídas/dados gerados pelas skills (conversas, transcrições) — não versionar
+conversas/
+leads/
+*.txt
+!requirements.txt
+transcricao*.txt
+conversa*.txt
+
+# Segredos — NUNCA comitar
+.env
+*.key
+*token*
+
+# Mídia de teste
+*.mp3
+*.mp4
+*.m4a
+*.wav
+*.mov
+*.mkv
+
+# SO / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

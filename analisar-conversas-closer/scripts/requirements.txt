@@ -1,0 +1,7 @@
+# Para evolution_fetch.py
+requests>=2.31
+
+# Para transcribe.py (transcrição local + diarização)
+# whisperx puxa torch, faster-whisper e pyannote.audio.
+# Com GPU NVIDIA, instale antes o torch com CUDA (ver pytorch.org) p/ acelerar.
+whisperx>=3.1

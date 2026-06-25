@@ -1,0 +1,2 @@
+# Para evolution_fetch.py e evolution_send.py
+requests>=2.31
