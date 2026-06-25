@@ -1,154 +1,160 @@
 # A Ordem — Skills
 
-> Coleção de **Agent Skills** (formato `SKILL.md`) para Claude Code / Cursor.
+> Suíte de **Agent Skills** (formato `SKILL.md`) para Claude Code / Cursor que
+> transforma o agente numa ferramenta de *enablement* de closer: analisar, treinar,
+> qualificar, recuperar e registrar conversas de vendas.
 > Feito pela **A Ordem**.
 
 ---
 
 ## O que é
 
-Um conjunto de skills que ensinam o agente de IA (Claude Code ou Cursor) a
-executar tarefas especializadas de ponta a ponta, falando em português. Cada skill
-é uma pasta com um `SKILL.md` (as instruções), documentação de apoio (`references/`)
-e scripts utilitários (`scripts/`). O agente carrega a skill quando a tarefa bate
-com a descrição dela e segue o passo a passo — incluindo instalar dependências,
-rodar scripts e gerar o resultado.
+Um time de skills que rodam dentro do Claude Code (ou Cursor) e executam tarefas de
+vendas de ponta a ponta, em português. Você pede em linguagem natural ("analisa as
+conversas do meu closer", "me ajuda a recuperar esse lead", "vamos treinar pitch")
+e o agente carrega a skill certa, puxa os dados, aplica uma rubrica consistente e
+entrega o resultado — sempre do mesmo jeito, em escala.
 
-Hoje o pacote contém **5 skills** que formam uma suíte de *enablement* de closer:
-analisar → treinar → qualificar → recuperar → registrar.
-
-## Por que existe
-
-Times comerciais geram muitas conversas (WhatsApp, calls) e quase nunca têm tempo
-de revisar a qualidade do que os closers fazem. Avaliar isso na mão é lento e
-subjetivo. Estas skills transformam o agente numa ferramenta repetível: ele puxa a
-conversa, padroniza, aplica uma rubrica consistente e devolve um diagnóstico
-acionável — sempre do mesmo jeito, em escala.
+São **5 skills** que se encaixam num fluxo:
+**analisar → treinar → qualificar → recuperar (follow-up) → registrar (CRM).**
 
 ## Pra quem é
 
 - **Gestores comerciais / head de vendas** que querem auditar e treinar closers.
 - **Consultorias e agências** que entregam diagnóstico de vendas para clientes.
-- **Operações que usam Evolution API** (WhatsApp) e querem analisar conversas reais.
+- **Operações que usam Evolution API** (WhatsApp) e querem trabalhar conversas reais.
 
-## Arquitetura
+## Início rápido
+
+```bash
+# 1) Clona o repo numa pasta de trabalho (nome sem hífen na frente, fica mais fácil)
+git clone https://github.com/hiker328/-ordem-skills.git ordem-skills
+
+# 2) Entra na pasta
+cd ordem-skills
+
+# 3) Abre o Claude Code aqui dentro — as skills em .claude/skills são detectadas
+claude
+> analisa essa conversa de vendas    # ou /analisar-conversas-closer
+```
+
+Rodando o `claude` de dentro do repo, as skills em `.claude/skills/` são
+reconhecidas automaticamente como skills do projeto. Cada usuário cria a sua pasta,
+clona o repo e trabalha lá dentro.
+
+**Quer as skills disponíveis em qualquer projeto?** Copie para o diretório pessoal:
+
+```powershell
+# Claude Code
+Copy-Item -Recurse "ordem-skills\.claude\skills\*" "$env:USERPROFILE\.claude\skills\"
+# Cursor
+Copy-Item -Recurse "ordem-skills\.claude\skills\*" "$env:USERPROFILE\.cursor\skills\"
+```
+
+## Como o conjunto é organizado
 
 Cada skill segue o mesmo padrão de 3 camadas (*progressive disclosure*):
 
 ```
-SKILL.md        →  orquestrador: o agente lê primeiro. Decide o fluxo e roteia.
+SKILL.md         →  orquestrador: o agente lê primeiro. Decide o fluxo e roteia.
 references/*.md  →  conhecimento detalhado, lido só quando necessário.
 scripts/*        →  trabalho mecânico/determinístico (puxar dados, transcrever).
 ```
 
-Princípio central: **o julgamento é do agente; o mecânico é dos scripts.** O Claude
-faz a análise (lendo a rubrica); os scripts só executam o que é frágil ou
-repetitivo (chamar API, rodar ffmpeg/WhisperX). Isso mantém o `SKILL.md` enxuto e o
-resultado consistente.
+Princípio central: **o julgamento é do agente; o mecânico é dos scripts.** O agente
+faz a análise (lendo a rubrica); os scripts só executam o que é frágil ou repetitivo
+(chamar a API, rodar ffmpeg/WhisperX). Isso mantém o `SKILL.md` enxuto e o resultado
+consistente.
 
 ## As skills
 
 ### `analisar-conversas-closer`
-
-Analisa o desempenho de um closer/vendedor numa conversa e gera um relatório com
-notas (0–100), pontos fortes, erros e sugestões. Aceita **3 fontes de entrada**:
-
-| Fonte | Como funciona |
-|-------|---------------|
-| **WhatsApp (Evolution API)** | O agente puxa as conversas da instância. Usuário escolhe um contato ou todas. Papéis vêm rotulados (Closer/Cliente) automaticamente. |
-| **Texto colado** | O usuário cola a conversa direto no chat. |
-| **Áudio/vídeo de call** | Transcrição **local e sem custo de API** com WhisperX + diarização (separa quem fala). Se for vídeo, o ffmpeg extrai o áudio. |
-
-Docs internos: `rubrica.md`, `evolution.md`, `transcricao.md`, `credenciais.md`.
+Avalia a performance de um closer e gera relatório com notas (0–100), pontos fortes,
+erros e sugestões. Fontes: **WhatsApp (Evolution)**, **texto colado** ou
+**áudio/vídeo** (transcrição local com WhisperX + diarização).
 
 ### `treinar-closer`
-
 Treino por **role-play**: o agente encarna um cliente (frio, indeciso, agressivo,
-interessado) num cenário/produto definido, conduz a conversa e, ao final, pontua o
-closer com a rubrica e dá feedback acionável. Não usa scripts — é conversa guiada.
-Docs internos: `perfis-cliente.md`, `rubrica.md`.
+interessado) num cenário/produto, conduz a conversa e no fim pontua com a rubrica e
+dá feedback. Sem scripts — conversa guiada.
 
 ### `qualificar-lead`
-
-Lê a conversa e dá um **score de qualificação** (0–100) e faixa (quente/morno/frio/
-desqualificado) por 6 critérios (dor, fit, orçamento, decisor, urgência,
-engajamento). Aceita uma conversa, texto colado ou **lote** (ranqueia todas).
-Fonte de dados via Evolution. Docs internos: `scoring.md`, `evolution.md`,
-`credenciais.md`.
+**Lead scoring** 0–100 e faixa (quente/morno/frio/desqualificado) por 6 critérios
+(dor, fit, orçamento, decisor, urgência, engajamento). Uma conversa, texto colado ou
+**lote** ranqueado. Fonte via Evolution.
 
 ### `gerar-followup`
-
-Recupera conversas paradas: identifica o estágio do lead na **cadência** (FUP-1 a
-FUP-6) e gera a próxima mensagem (ou a sequência inteira), personalizada pelo
-contexto. Pode **enviar** pela Evolution (sempre após aprovação do texto). Docs
-internos: `cadencia.md`, `evolution.md`, `credenciais.md`.
+Recupera conversas paradas: detecta o estágio na **cadência** (FUP-1..6) e gera a
+próxima mensagem (ou a sequência inteira), personalizada. Pode **enviar** pela
+Evolution — sempre após aprovação do texto.
 
 ### `resumir-call-para-crm`
+Call gravada → **notas estruturadas de CRM** (dor, contexto, orçamento, decisor,
+objeções, próximos passos com data). Transcreve local com WhisperX + diarização.
 
-Transforma uma call gravada (áudio/vídeo) em **notas estruturadas para o CRM**:
-dor, contexto, orçamento, decisor, objeções e próximos passos com data. Transcreve
-local com WhisperX + diarização. Docs internos: `formato-crm.md`, `transcricao.md`,
-`credenciais.md`.
+## Por que essa arquitetura é diferente
+
+**1. Tudo em arquivos comuns. Sem banco de dados.**
+Markdown e Python puro. Cabe num pendrive, abre em qualquer editor. Na prática:
+- **Portátil** — a skill é só uma pasta.
+- **Auditável** — cada instrução, rubrica e script é um arquivo que você lê.
+- **Reversível** — `git revert` desfaz qualquer experimento que deu errado.
+
+**2. O julgamento é separado do mecânico.**
+O que exige raciocínio (análise, feedback, follow-up) fica em texto, feito pelo
+agente. O que é frágil/repetitivo (API, ffmpeg, WhisperX) fica em script. Você
+troca a rubrica sem mexer no código, e troca o código sem mexer no critério.
+
+**3. Cada passo sensível é validado antes de agir.**
+A skill não age às cegas: a `gerar-followup` **nunca envia** sem o texto ser
+aprovado; a transcrição **confere o ambiente** (Python, ffmpeg, deps) antes de
+rodar; toda nota se apoia em **citação real** da conversa, não em suposição.
+
+**4. Local e sem custo recorrente.**
+A transcrição de áudio/vídeo roda na sua máquina (WhisperX + diarização) — sem
+mandar áudio pra fora e sem custo por minuto de API.
 
 ## Estrutura de pastas
 
 ```
-D:\Skills\
-├── README.md                       # esta documentação
-├── analisar-conversas-closer\
-│   ├── SKILL.md
-│   ├── references\  (rubrica, evolution, transcricao, credenciais)
-│   └── scripts\     (evolution_fetch.py, transcribe.py, requirements.txt)
-├── treinar-closer\
-│   ├── SKILL.md
-│   └── references\  (perfis-cliente, rubrica)
-├── qualificar-lead\
-│   ├── SKILL.md
-│   ├── references\  (scoring, evolution, credenciais)
-│   └── scripts\     (evolution_fetch.py, requirements.txt)
-├── gerar-followup\
-│   ├── SKILL.md
-│   ├── references\  (cadencia, evolution, credenciais)
-│   └── scripts\     (evolution_fetch.py, evolution_send.py, requirements.txt)
-└── resumir-call-para-crm\
-    ├── SKILL.md
-    ├── references\  (formato-crm, transcricao, credenciais)
-    └── scripts\     (transcribe.py, requirements.txt)
+ordem-skills/                         # raiz do repo
+├── README.md
+├── LICENSE
+├── .gitignore
+└── .claude/
+    └── skills/
+        ├── analisar-conversas-closer/
+        │   ├── SKILL.md
+        │   ├── references/  (rubrica, evolution, transcricao, credenciais)
+        │   └── scripts/     (evolution_fetch.py, transcribe.py, requirements.txt)
+        ├── treinar-closer/
+        │   ├── SKILL.md
+        │   └── references/  (perfis-cliente, rubrica)
+        ├── qualificar-lead/
+        │   ├── SKILL.md
+        │   ├── references/  (scoring, evolution, credenciais)
+        │   └── scripts/     (evolution_fetch.py, requirements.txt)
+        ├── gerar-followup/
+        │   ├── SKILL.md
+        │   ├── references/  (cadencia, evolution, credenciais)
+        │   └── scripts/     (evolution_fetch.py, evolution_send.py, requirements.txt)
+        └── resumir-call-para-crm/
+            ├── SKILL.md
+            ├── references/  (formato-crm, transcricao, credenciais)
+            └── scripts/     (transcribe.py, requirements.txt)
 ```
 
 Cada skill é **auto-contida**: os docs/scripts compartilhados (Evolution,
 transcrição, credenciais) ficam copiados dentro de cada uma, para poderem ser
 instaladas individualmente.
 
-## Como instalar
-
-As skills moram em `D:\Skills`. Para o agente **carregar** uma skill, copie a pasta
-dela para o diretório de skills do seu ambiente:
-
-**Claude Code**
-```powershell
-# todas as skills de uma vez (pessoal, todos os projetos)
-Copy-Item -Recurse "D:\Skills\*" "$env:USERPROFILE\.claude\skills\"
-# ou só uma: Copy-Item -Recurse "D:\Skills\gerar-followup" "$env:USERPROFILE\.claude\skills\"
-# ou por projeto: <projeto>\.claude\skills\
-```
-
-**Cursor**
-```powershell
-Copy-Item -Recurse "D:\Skills\*" "$env:USERPROFILE\.cursor\skills\"
-# ou por projeto: <projeto>\.cursor\skills\
-```
-
-O formato `SKILL.md` é o mesmo nos dois. Depois de copiar, reinicie/abra o agente e
-peça algo que case com a skill (ex.: *"analisa essa conversa de vendas"*).
-
-### Dependências (instaladas pelo próprio agente)
+## Dependências (instaladas pelo próprio agente)
 
 Para a transcrição de áudio/vídeo, **o agente instala o que faltar** (Python,
-ffmpeg, deps via `pip`) seguindo o "Setup automático" em `references/transcricao.md`.
-Você só precisa fornecer credenciais que exigem conta/login (token HuggingFace
-para diarização; dados da Evolution; chave OpenAI no fallback) — a skill ensina a
-obter cada uma em `references/credenciais.md`.
+ffmpeg, deps via `pip`) seguindo o "Setup automático" de `references/transcricao.md`.
+Você só fornece credenciais que exigem conta/login (token HuggingFace para
+diarização; dados da Evolution; chave OpenAI no fallback) — a skill ensina a obter
+cada uma em `references/credenciais.md`.
 
 ## Como usar (exemplo)
 
@@ -156,20 +162,19 @@ obter cada uma em `references/credenciais.md`.
 2. Ele pede os 3 dados da Evolution (URL, apikey, instância) e ensina onde achar.
 3. Lista as conversas; você escolhe uma ou "todas".
 4. Ele puxa, aplica a rubrica e entrega o relatório com notas e sugestões.
-
-Para call gravada: mande o arquivo, informe o token HF (a skill ensina a pegar), e
-o agente instala o ambiente, transcreve com locutores separados e analisa.
+5. Em seguida: *"treina esse closer no ponto fraco"*, *"qualifica esses leads"* ou
+   *"gera o follow-up pros que ficaram parados"*.
 
 ## O que isso NÃO é
 
 - Não é um CRM — gera notas para colar no seu CRM, não armazena nada.
-- Não é uma automação/cron — gera (e pode disparar manualmente) follow-ups, mas
-  não roda agendamento sozinho. Para cadência automática por horário, use n8n.
+- Não é uma automação/cron — gera (e dispara manualmente) follow-ups, mas não roda
+  agendamento sozinho. Para cadência automática por horário, use n8n.
 - Não é um serviço em nuvem — roda local, no seu agente.
 - Não substitui o gestor/closer — entrega diagnóstico e rascunhos; a decisão e o
   envio final são seus.
 
 ## Feito pela A Ordem
 
-Criado e mantido pela **A Ordem**. Padrão de documentação inspirado no
-`growth-os-skills` (Accelera 360).
+Criado e mantido pela **A Ordem**. Estrutura e documentação inspiradas no
+`growth-os-skills` (Accelera 360). Licença MIT (ver `LICENSE`).
