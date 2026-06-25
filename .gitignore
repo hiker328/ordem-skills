@@ -31,3 +31,9 @@ conversa*.txt
 Thumbs.db
 .idea/
 .vscode/
+
+# Exceções: exemplos e templates SÃO versionados (apesar das regras acima)
+!examples/
+!examples/**
+!templates/
+!templates/**

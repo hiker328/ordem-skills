@@ -27,8 +27,8 @@ São **5 skills** que se encaixam num fluxo:
 ## Início rápido
 
 ```bash
-# 1) Clona o repo numa pasta de trabalho (nome sem hífen na frente, fica mais fácil)
-git clone https://github.com/hiker328/-ordem-skills.git ordem-skills
+# 1) Clona o repo numa pasta de trabalho
+git clone https://github.com/hiker328/ordem-skills.git
 
 # 2) Entra na pasta
 cd ordem-skills
@@ -121,6 +121,10 @@ ordem-skills/                         # raiz do repo
 ├── README.md
 ├── LICENSE
 ├── .gitignore
+├── examples/                         # amostras fictícias de entrada e saída
+├── tests/                            # testes das funções dos scripts (sem rede)
+├── templates/
+│   └── workspace/                    # layout sugerido de pasta de trabalho + .env.example
 └── .claude/
     └── skills/
         ├── analisar-conversas-closer/
@@ -147,6 +151,13 @@ ordem-skills/                         # raiz do repo
 Cada skill é **auto-contida**: os docs/scripts compartilhados (Evolution,
 transcrição, credenciais) ficam copiados dentro de cada uma, para poderem ser
 instaladas individualmente.
+
+**Pastas de apoio:**
+- `examples/` — amostras fictícias de entrada e do que cada skill entrega.
+- `templates/workspace/` — layout sugerido de pasta de trabalho + `.env.example`
+  com as credenciais usadas pelas skills.
+- `tests/` — testes das funções dos scripts (parsing/formatação, sem rede). Rode
+  com `python tests/test_scripts.py` (precisa de `requests` instalado).
 
 ## Dependências (instaladas pelo próprio agente)
 
