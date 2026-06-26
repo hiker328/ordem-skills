@@ -1,8 +1,16 @@
-# Rubrica de análise de closer
+# Rubrica de análise de closer (agência)
 
 Baseada no motor de análise do PitchLab, adaptada para conversas reais (WhatsApp,
-texto ou call transcrita). Avalie **apenas o closer/vendedor** — o cliente é o
-contexto, não o avaliado.
+texto ou call transcrita) de **closer de agência** vendendo serviço (gestão de
+tráfego, social, performance) para donos de negócio. Avalie **apenas o
+closer/vendedor** — o cliente (prospect) é o contexto, não o avaliado.
+
+**Contexto de agência:** o que se vende é serviço recorrente (fee/retainer, às
+vezes + % sobre verba/resultado), confiança e resultado futuro — não um produto
+tangível. Objeções típicas do nicho: "agência é tudo igual", "já fui queimado por
+agência", "e se não der resultado?", "tá caro pro meu momento", "vou rodar interno/
+com freelancer", "me manda uma proposta" (e some). O bom closer ancora em
+**resultado/ROI, prova (cases), método e garantia/risco compartilhado**.
 
 ## Princípios
 
@@ -32,7 +40,7 @@ contexto, não o avaliado.
 | **Contorno de objeções** | Como lidou com "tá caro", "vou pensar", "preciso falar com…", silêncio |
 | **Fechamento** | Pediu o avanço/compromisso? Criou próximo passo claro? Senso de urgência legítimo? |
 | **Clareza** | Comunicação objetiva, sem jargão confuso, mensagens bem estruturadas |
-| **Conhecimento do produto** | Domínio da oferta, proposta de valor e diferenciais |
+| **Domínio da oferta (agência)** | Conhece o serviço, o método, cases/resultados e o modelo de cobrança; sabe traduzir tudo em ROI pro cliente |
 | **Cadência/ritmo (call)** ou **Tempo de resposta (texto)** | Conduziu sem atropelar; respondeu em tempo hábil |
 
 ## Formato do relatório (saída)

@@ -1,16 +1,17 @@
-## Qualificação — João Mendes (Solaris / energia solar comercial)
-**Score:** 78/100 — **Faixa:** 🔥 Quente
+## Qualificação — João Mendes (loja de varejo · lead de tráfego da Agência Vortex)
+**Score:** 72/100 — **Faixa:** 🟡 Morno (quase quente)
 
 | Critério | Nota | Evidência |
 |----------|------|-----------|
-| Dor | 22/25 | "Uns 4 mil por mês, tá pesado" — dor financeira clara e admitida |
-| Fit/ICP | 18/20 | Comércio com conta alta = perfil ideal para solar |
-| Orçamento | 11/15 | "se valer a pena eu faço" — disposição, mas sem verba confirmada |
-| Decisor | 9/15 | Decide junto com o irmão/sócio — decisor compartilhado |
-| Urgência | 8/15 | "não tenho pressa" — sem gatilho de prazo |
-| Engajamento | 10/10 | Respondeu todas as perguntas, pediu a simulação |
+| Dor | 22/25 | "já me queimei com duas [agências]", "nunca soube se deu venda" — dor clara de mensuração/resultado |
+| Fit/ICP | 16/20 | Loja de varejo com produto que escala = atende; falta confirmar ticket |
+| Verba de mídia + fee | 9/15 | Investe R$ 1.500/mês em anúncio; fee de R$ 2k ainda não validado no bolso |
+| Decisor | 9/15 | Decide com o irmão/sócio — decisor compartilhado, sócio ainda não engajado |
+| Urgência | 7/15 | Sem gatilho explícito de prazo; insatisfação alta, mas sem deadline |
+| Engajamento | 9/10 | Respondeu tudo, pediu case e proposta |
 
-**Sinais de compra:** pediu simulação, falou em payback, admitiu dor financeira.
-**Red flags:** sem urgência ("não tenho pressa"); decisor compartilhado ainda não engajado.
-**Próxima ação recomendada:** enviar a simulação hoje e propor 2 horários fechados de
-reunião **já incluindo o sócio** — converter o "vou ver" em compromisso antes de esfriar.
+**Sinais de compra:** pediu case e proposta, perguntou preço, admitiu não medir resultado.
+**Red flags:** queimado por 2 agências (cético — exige prova e garantia); fee acima da
+verba atual; decisor compartilhado.
+**Próxima ação recomendada:** enviar case + proposta enxuta hoje e propor 2 horários
+**com o sócio**; na reunião, liderar com garantia/risco compartilhado e ROI dos R$ 1.500.

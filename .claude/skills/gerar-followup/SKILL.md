@@ -1,8 +1,9 @@
 ---
 name: gerar-followup
 description: >-
-  Gera a próxima mensagem de follow-up para conversas de vendas paradas, seguindo
-  uma cadência configurável (dia 1, 3, 6, 9, 14, 17...). Lê a conversa do WhatsApp
+  Gera a próxima mensagem de follow-up para leads de agência (marketing/tráfego)
+  parados, seguindo uma cadência configurável (dia 1, 3, 6, 9, 14, 17...) e tratando
+  objeções do nicho ("já me queimei", "vou ver com o sócio"). Lê a conversa do WhatsApp
   via Evolution API (ou texto colado), decide em que estágio de follow-up o lead
   está e escreve mensagens personalizadas pelo contexto. Opcionalmente envia pela
   Evolution. Use quando o usuário quiser recuperar leads frios, criar follow-ups,

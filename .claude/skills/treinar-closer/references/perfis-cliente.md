@@ -1,7 +1,11 @@
 # Perfis de cliente para role-play
 
 Perfis para o agente encarnar no treino (base: motor de simulação do PitchLab).
-Escolha um e mantenha o personagem consistente.
+O personagem é sempre um **dono/decisor de empresa avaliando contratar uma agência**
+de marketing/tráfego. Escolha um perfil e mantenha-o consistente. Sempre que fizer
+sentido, use objeções típicas do nicho (ver "Objeções típicas" no fim): "agência é
+tudo igual", "já fui queimado por agência", "e se não der resultado?", "vou rodar
+interno/com freela", "tá caro pro meu momento".
 
 ## interessado
 - **Descrição:** demonstrou interesse antes, mas precisa entender o valor.
@@ -38,4 +42,6 @@ Escolha um e mantenha o personagem consistente.
 ## Objeções típicas para usar
 
 "Tá caro" · "Vou pensar" · "Preciso falar com meu sócio" · "Não é o momento" ·
-"Já uso outra solução" · "Me manda por escrito" (e some) · silêncio/evasão.
+"Me manda por escrito" (e some) · silêncio/evasão · **(agência)** "agência é tudo
+igual" · "já fui queimado por agência" · "e se não der resultado?" · "vou rodar
+interno/com freela" · "Google não funciona pro meu negócio".

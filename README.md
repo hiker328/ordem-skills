@@ -1,28 +1,33 @@
-# A Ordem — Skills
+# A Ordem — Skills (para Agências)
 
-> Suíte de **Agent Skills** (formato `SKILL.md`) para Claude Code / Cursor que
-> transforma o agente numa ferramenta de *enablement* de closer: analisar, treinar,
-> qualificar, recuperar e registrar conversas de vendas.
+> Suíte de **Agent Skills** (formato `SKILL.md`) para Claude Code / Cursor, feita
+> para **agências de marketing/tráfego**: transforma o agente numa ferramenta de
+> *enablement* dos closers que vendem os serviços da agência — analisar, treinar,
+> qualificar, recuperar e registrar conversas comerciais.
 > Feito pela **A Ordem**.
 
 ---
 
 ## O que é
 
-Um time de skills que rodam dentro do Claude Code (ou Cursor) e executam tarefas de
-vendas de ponta a ponta, em português. Você pede em linguagem natural ("analisa as
-conversas do meu closer", "me ajuda a recuperar esse lead", "vamos treinar pitch")
-e o agente carrega a skill certa, puxa os dados, aplica uma rubrica consistente e
-entrega o resultado — sempre do mesmo jeito, em escala.
+Um time de skills que rodam dentro do Claude Code (ou Cursor) e executam tarefas
+comerciais da **agência** de ponta a ponta, em português. Seus closers vendem
+serviço (gestão de tráfego, social, performance) e essas skills auditam e elevam
+esse jogo. Você pede em linguagem natural ("analisa as conversas do meu closer",
+"qualifica esses leads que vieram do anúncio", "treina o closer no contorno de
+'agência é tudo igual'") e o agente carrega a skill certa, puxa os dados, aplica
+uma rubrica consistente e entrega o resultado — sempre do mesmo jeito, em escala.
 
 São **5 skills** que se encaixam num fluxo:
 **analisar → treinar → qualificar → recuperar (follow-up) → registrar (CRM).**
 
 ## Pra quem é
 
-- **Gestores comerciais / head de vendas** que querem auditar e treinar closers.
-- **Consultorias e agências** que entregam diagnóstico de vendas para clientes.
-- **Operações que usam Evolution API** (WhatsApp) e querem trabalhar conversas reais.
+- **Donos e head comercial de agências** que querem auditar e treinar seus closers.
+- **Gestores de agência** que vendem serviço recorrente (fee/retainer) e dependem
+  da qualidade da conversa para fechar.
+- **Operações que usam Evolution API** (WhatsApp) e querem trabalhar conversas reais
+  com leads vindos de tráfego.
 
 ## Início rápido
 

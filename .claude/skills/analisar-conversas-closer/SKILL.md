@@ -1,8 +1,9 @@
 ---
 name: analisar-conversas-closer
 description: >-
-  Analisa conversas de closers/vendedores e gera um diagnóstico de performance
-  (rapport, descoberta, contorno de objeções, fechamento etc.). Aceita 3 fontes:
+  Analisa conversas de closers de agência (marketing/tráfego) e gera um diagnóstico
+  de performance (rapport, descoberta, contorno de objeções como "agência é tudo
+  igual"/"já me queimei", fechamento etc.). Aceita 3 fontes:
   (1) mensagens de WhatsApp via Evolution API, (2) texto colado direto no chat,
   (3) áudio/vídeo de call (transcreve localmente com WhisperX + diarização por
   locutor). Use quando o usuário pedir para avaliar, analisar ou dar feedback

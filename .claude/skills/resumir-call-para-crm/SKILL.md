@@ -1,8 +1,9 @@
 ---
 name: resumir-call-para-crm
 description: >-
-  Transforma uma call de vendas (gravação de áudio/vídeo, ou transcrição já
-  pronta) em notas estruturadas para o CRM: dor, contexto, orçamento, decisor,
+  Transforma uma call de vendas de agência (marketing/tráfego — gravação de
+  áudio/vídeo, ou transcrição já pronta) em notas estruturadas para o CRM: dor,
+  contexto, verba/fee, decisor,
   objeções, próximos passos e data de follow-up. Transcreve localmente com
   WhisperX + diarização (separa quem fala), sem custo de API. Use quando o usuário
   quiser registrar uma reunião/ligação no CRM, gerar notas de call, resumo de

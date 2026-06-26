@@ -1,9 +1,10 @@
 ---
 name: qualificar-lead
 description: >-
-  Lê uma conversa de vendas e qualifica o lead com um score (0-100) e uma faixa
-  (quente/morno/frio/desqualificado), avaliando dor, fit, orçamento, decisor,
-  urgência e engajamento. Aceita conversas do WhatsApp via Evolution API, texto
+  Lê uma conversa de vendas e qualifica o lead (cliente potencial da agência) com um
+  score (0-100) e uma faixa (quente/morno/frio/desqualificado), avaliando dor, fit/ICP,
+  verba de mídia + fee, decisor, urgência e engajamento. Aceita conversas do WhatsApp
+  via Evolution API, texto
   colado, ou em lote (todas as conversas). Use quando o usuário quiser priorizar
   leads, fazer triagem, lead scoring, qualificação BANT/SPIN ou decidir em quem o
   closer foca primeiro.

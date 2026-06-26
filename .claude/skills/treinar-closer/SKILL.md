@@ -1,9 +1,10 @@
 ---
 name: treinar-closer
 description: >-
-  Treina closers/vendedores com simulação de vendas (role-play): o agente faz o
-  papel de um cliente com um perfil escolhido (frio, indeciso, agressivo,
-  interessado) e cenário/produto definidos, conduz a conversa e, ao final, pontua
+  Treina closers de agência (marketing/tráfego) com simulação de vendas (role-play):
+  o agente faz o papel de um dono de negócio avaliando contratar a agência, com um
+  perfil escolhido (frio, indeciso, agressivo, interessado) e cenário/serviço
+  definidos, conduz a conversa e, ao final, pontua
   o desempenho com a rubrica e dá feedback. Use quando o usuário quiser praticar
   pitch, simular uma call/atendimento, treinar contorno de objeções, fazer
   role-play de vendas ou ensaiar antes de uma reunião.

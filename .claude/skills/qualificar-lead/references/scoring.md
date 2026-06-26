@@ -1,17 +1,18 @@
-# Modelo de qualificação de lead
+# Modelo de qualificação de lead (cliente de agência)
 
-Score de 0–100 baseado em 6 critérios. Pontue só com evidência da conversa.
+Score de 0–100 baseado em 6 critérios, pensado para qualificar **empresas que podem
+contratar a agência**. Pontue só com evidência da conversa.
 
 ## Critérios e peso
 
 | Critério | Peso | O que procurar |
 |----------|------|----------------|
-| **Dor** | 25 | Tem um problema claro e admitido? Quão grande/urgente é? |
-| **Fit / ICP** | 20 | Encaixa no perfil de cliente ideal (segmento, porte, contexto)? |
-| **Orçamento** | 15 | Sinais de que pode/quer investir? Reagiu a preço sem fugir? |
-| **Decisor** | 15 | Está falando com quem decide, ou só com influenciador? |
-| **Urgência** | 15 | Tem prazo/gatilho para resolver agora vs "algum dia"? |
-| **Engajamento** | 10 | Responde rápido, faz perguntas, pede próximos passos? |
+| **Dor** | 25 | Problema claro de marketing/vendas (sem leads, CAC alto, depende de indicação, agência anterior ruim)? Quão urgente? |
+| **Fit / ICP** | 20 | É o cliente ideal da agência: segmento atendido, **tem produto/serviço que escala**, ticket que comporta a verba? |
+| **Verba de mídia + fee** | 15 | Tem (ou pode ter) orçamento de tráfego **e** condição de pagar o fee? Reagiu a preço sem fugir? |
+| **Decisor** | 15 | Fala com quem decide (dono/sócio) ou com influenciador? |
+| **Urgência** | 15 | Tem prazo/gatilho (lançamento, meta, sazonalidade) vs "algum dia"? |
+| **Engajamento** | 10 | Responde rápido, faz perguntas, pede proposta/próximos passos? |
 
 Some os pontos obtidos (proporcional dentro de cada critério) para o score 0–100.
 
