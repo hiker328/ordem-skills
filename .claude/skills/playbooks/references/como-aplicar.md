@@ -3,7 +3,7 @@
 > Você aplica sozinho, em minutos. Não precisa instalar nem conectar nada. É uma conversa.
 
 ## Passo a passo
-1. Abra uma conversa nova no Claude (ou ChatGPT). Cole o prompt do arquivo `solucao.md`.
+1. Abra uma conversa nova no Claude (ou ChatGPT). Cole o prompt do arquivo `SKILL.md`.
 2. Envie. O assistente vai perguntar qual playbook você quer: **(A) Vendas** ou **(B) Tráfego**. Responda A ou B.
 3. Ele faz um bloco de perguntas sobre a sua operação (nicho, oferta, ticket, canais, time, maior dor). Responda com o que você tem — onde não souber um número, diga "não sei" que ele marca `[PERSONALIZAR]` pra você preencher depois.
 4. O assistente gera o playbook estruturado:

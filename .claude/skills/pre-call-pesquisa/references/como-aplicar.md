@@ -11,7 +11,7 @@ Junte o que você já tem do prospect — só dado público, o que qualquer um a
 
 ## Passo a passo
 1. Abra uma conversa nova no Claude (ou ChatGPT).
-2. Cole o prompt do arquivo `solucao.md`.
+2. Cole o prompt do arquivo `SKILL.md`.
 3. No fim do prompt, preencha o bloco de dados: empresa, decisor, links e a sua oferta. Se a ferramenta não navega, cole também o conteúdo dos canais.
 4. Envie. Você recebe o dossiê: resumo executivo, prováveis dores, oportunidades, perguntas SPIN e objeções com resposta.
 5. Leia uma vez, marque os 3 pontos que mais importam e leve o dossiê pra reunião.

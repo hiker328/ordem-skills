@@ -12,7 +12,7 @@ A transcrição não precisa ser perfeita. Mesmo com nomes trocados ou sem marca
 
 ## Passo a passo
 1. Pegue a transcrição da call (ver acima). Pode ser texto colado ou um arquivo.
-2. Abra uma conversa nova no Claude (ou ChatGPT). Cole o prompt do arquivo `solucao.md`.
+2. Abra uma conversa nova no Claude (ou ChatGPT). Cole o prompt do arquivo `SKILL.md`.
 3. No fim do prompt, cole a transcrição. Se tiver, adicione o contexto: o que vende, ticket e a etapa do funil dessa call (descoberta, proposta ou fechamento).
 4. Envie. Você recebe: nota de 0 a 10, pontos fortes (com o trecho), erros (o que, o trecho, o impacto), melhorias com exemplo de fala e os próximos passos pro lead.
 5. Leve as melhorias pro 1:1 com o closer. Rode na próxima call e compare — o mesmo erro deve sumir.

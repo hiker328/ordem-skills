@@ -18,9 +18,9 @@ esse jogo. Você pede em linguagem natural ("analisa as conversas do meu closer"
 'agência é tudo igual'") e o agente carrega a skill certa, puxa os dados, aplica
 uma rubrica consistente e entrega o resultado — sempre do mesmo jeito, em escala.
 
-São **8 skills** que se encaixam num fluxo:
+São **9 skills** que se encaixam num fluxo:
 **pesquisar → analisar → treinar → qualificar → recuperar (follow-up) → registrar (CRM)**,
-mais **playbooks** e **coaching** de closer.
+mais **playbooks**, **coaching** de closer e **construtor de proposta**.
 
 ## Pra quem é
 
@@ -110,6 +110,10 @@ closer evoluir. Paste-based.
 Gera **playbooks** de vendas (ou de tráfego) estruturados a partir do contexto da
 agência — argumentos, objeções, passos. Paste-based.
 
+### `proposta-builder`
+Monta uma **proposta comercial** personalizada a partir do diagnóstico do prospect
+(dor, escopo, fee, próximos passos, garantia). Paste-based.
+
 ## Por que essa arquitetura é diferente
 
 **1. Tudo em arquivos comuns. Sem banco de dados.**
@@ -166,7 +170,8 @@ ordem-skills/                         # raiz do repo
         │   └── scripts/     (transcribe.py, requirements.txt)
         ├── pre-call-pesquisa/   (SKILL.md + references/ + card.html · paste-based)
         ├── closer-coach/        (SKILL.md + references/ + card.html · paste-based)
-        └── playbooks/           (SKILL.md + references/ + card.html · paste-based)
+        ├── playbooks/           (SKILL.md + references/ + card.html · paste-based)
+        └── proposta-builder/    (SKILL.md + references/ + card.html · paste-based)
 ```
 
 Cada skill é **auto-contida**: os docs/scripts compartilhados (Evolution,
